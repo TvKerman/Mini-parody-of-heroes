@@ -5,9 +5,7 @@ import com.battle.heroes.army.Unit;
 import com.battle.heroes.army.programs.PrintBattleLog;
 import com.battle.heroes.army.programs.SimulateBattle;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 public class SimulateBattleImpl implements SimulateBattle {
     private PrintBattleLog printBattleLog;
@@ -25,10 +23,6 @@ public class SimulateBattleImpl implements SimulateBattle {
             }
             playerArmy.getUnits().removeIf(unit -> !unit.isAlive());
             computerArmy.getUnits().removeIf(unit -> !unit.isAlive());
-
-            if (!armyHasAlive(playerArmy) || !armyHasAlive(computerArmy)) {
-                break;
-            }
         }
 
         if (!armyHasAlive(playerArmy) && !armyHasAlive(computerArmy)) {
